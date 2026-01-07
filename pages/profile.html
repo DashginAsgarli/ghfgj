@@ -1,86 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil</title>
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - MasterHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/MasterLogo.png">
 </head>
-
 <body class="profile">
-  <div id="profil"></div>
-  <div class="reserve-card">
-    <div class="reserve-main">
-      <span class="delete-btn">&times;</span>
+    <div id="profil"></div>
+    
+    <!-- Rezervasiya kartı -->
+    <div class="reserve-card" style="display: none;">
+        <div class="reserve-main">
+            <span class="delete-btn">&times;</span>
+            <div class="reserve-info">
+                <h1>Rezervasiya Edin</h1>
+                <p><b>Xidmət verən:</b> <span class="master-name"></span></p>
+                <p><b>Tarix və saat:</b> <span class="date-time"></span></p>
+                <h2>Qiymət: <span class="total">0 AZN</span></h2>
+                <p id="commission">5% komissiya</p>
+            </div>
+            
+            <div class="userData">
+                <p>Ad Soyad</p>
+                <input type="text" class="userName" placeholder="Ad soyad..." required>
+                <p>Əlaqə nömrəsi</p>
+                <input type="tel" class="userContact" placeholder="+994 xx xxx xx xx" required>
+                <p>Email</p>
+                <input type="email" class="userEmail" placeholder="email@gmail.com">
+            </div>
 
-      <div class="reserve-info">
-        <h1>Rezervasiya Edin</h1>
-        <p><b>Xidmət verən:</b> <span class="master-name"></span></p>
-        <p><b>Tarix və saat:</b> <span class="date-time"></span></p>
-        <h2>Qiymət: <span class="total">0 AZN</span></h2>
-        <p id="commission">5% komissiya</p>
-      </div>
-      
-      <div class="userData">
-        <p>Ad Soyad</p>
-        <input type="text" class="userName" placeholder="Ad soyad..." required >
-        <p>Əlaqə nömrəsi</p>
-        <input type="number" class="userContact"  placeholder="+xxx xx-xxx-xx-xx" required >
-        <p>Email</p>
-        <input type="email" class="userEmail" placeholder="email@gmail.com">
-      </div>
-
-      <div class="pay">
-        <h3>Ödəniş üsulu:</h3>
-        <div class="pay-cards">
-          <button class="pay-card">
-            <p class="card-bank">💳</p> Kartla
-          </button>
-          <button class="pay-cash">
-            <p class="card-cash">💸</p> Nağd
-          </button>
+            <div class="pay">
+                <h3>Ödəniş üsulu:</h3>
+                <div class="pay-cards">
+                    <button class="pay-card">💳 Kartla</button>
+                    <button class="pay-cash">💸 Nağd</button>
+                </div>
+            </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-  <div class="depozit"></div>
-  </div>
-  </div>
-<div class="receipt-card">
-  <div class="receipt-main">
-    <div class="receipt-header">
-      <h1>🧾 Ödəniş Çeki</h1>
-      <span class="receipt-status">Uğurlu</span>
     </div>
 
-    <div class="receipt-section">
-      <p><span>Müştəri:</span> <b class="userReceipt"></b></p>
-      <p><span>Əlaqə:</span> <b class="userContactReceipt"></b></p>
-      <p><span>Email:</span> <b class="userMail"></b></p>
+    <!-- Çek kartı -->
+    <div class="receipt-card" style="display: none;">
+        <div class="receipt-main">
+            <div class="receipt-header">
+                <h1>🧾 Ödəniş Çeki</h1>
+                <span class="receipt-status">Uğurlu</span>
+            </div>
+
+            <div class="receipt-section">
+                <p><span>Müştəri:</span> <b class="userReceipt"></b></p>
+                <p><span>Əlaqə:</span> <b class="userContactReceipt"></b></p>
+                <p><span>Email:</span> <b class="userMail"></b></p>
+            </div>
+
+            <hr>
+
+            <div class="receipt-section">
+                <p><span>Xidmət verən:</span> <b class="receiptMaster"></b></p>
+                <p><span>Xidmətlər:</span> <b class="receiptServices"></b></p>
+                <p><span>Tarix & Saat:</span> <b class="receiptDate"></b></p>
+                <p><span>Ödəniş üsulu:</span> <b class="receiptPay">Kart</b></p>
+            </div>
+
+            <div class="receipt-total">
+                <span>Cəm məbləğ</span>
+                <h2 class="receipTotal">0 AZN</h2>
+            </div>
+
+            <button class="go-home">Ana səhifəyə qayıt</button>
+        </div>
     </div>
 
-    <hr>
-
-    <div class="receipt-section">
-      <p><span>Xidmət verən:</span> <b class="receiptMaster"></b></p>
-      <p><span>Xidmətlər:</span> <b class="receiptServices"></b></p>
-      <p><span>Tarix & Saat:</span> <b class="receiptDate"></b></p>
-      <p><span>Ödəniş üsulu: <b>Kart</b></span> <b class="receiptPay"></b></p>
-    </div>
-
-    <div class="receipt-total">
-      <span>Cəm məbləğ</span>
-      <h2 class="receipTotal"></h2>
-    </div>
-
-    <button class="go-home">Ana səhifəyə qayıt</button>
-
-  </div>
-</div>
-
-  <script type="module" src="../js/profile.js"></script>
+    <script type="module" src="../js/profile.js"></script>
 </body>
-
 </html>
